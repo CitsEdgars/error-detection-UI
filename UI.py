@@ -294,7 +294,8 @@ class Ui_MainWindow(object):
                 
                 if (self.h_shocks_remaining > 0):
                     if (randint(0,100) <= self.h_chance): 
-                        noise *= 5
+                        multiplier = 3 if randint(0,2) > 1 else -3
+                        noise *= multiplier
                         self.h_shocks_remaining -= 1
 
                 self.h_base_signal = self.h_base_signal[1:] 
@@ -320,7 +321,8 @@ class Ui_MainWindow(object):
 
                 if (self.c_shocks_remaining > 0):
                     if (randint(0,100) <= self.c_chance): 
-                        noise *= 5
+                        multiplier = 3 if randint(0,2) > 1 else -3
+                        noise *= multiplier
                         self.c_shocks_remaining -= 1
 
                 self.c_base_signal = self.c_base_signal[1:] 
